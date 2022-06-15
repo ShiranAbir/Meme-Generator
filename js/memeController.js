@@ -6,8 +6,7 @@ function renderMeme() {
     var img = new Image()
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gCanvasData.width, gCanvasData.height)
-        var text = meme.lines[meme.selectedLineIdx].txt
-        drawText(text)
+        drawText()
     }
     img.src = '../' + imgToRender.url
 }
@@ -23,4 +22,8 @@ function onSetColor(color) {
 
 function onChangeFontSize(sign){
     changeFontSize(sign)
+}
+
+function onSwitchLine(){
+    switchLine()
 }

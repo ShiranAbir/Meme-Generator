@@ -9,23 +9,42 @@ var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'I sometimes eat Falafel',
+        id:1,
+        txt: 'Enter your text here:',
+        size: 20,
+        align: 'left',
+        color: 'red'
+    },
+    {
+        id:2,
+        txt: 'Enter your text here:',
         size: 20,
         align: 'left',
         color: 'red'
     }
+
     ]
 }
 
-function drawText(text) {
-    gCtx.lineWidth = 2;
-    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color
-    gCtx.fillStyle = 'white'
-    gCtx.font = gMeme.lines[gMeme.selectedLineIdx].size.toString() + 'px Arial'
-    var x = gCanvasData.height / 4
-    var y = gCanvasData.height / 6
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+function drawText() {
+    gMeme.lines.forEach(line => {
+        gCtx.lineWidth = 2;
+        gCtx.strokeStyle = line.color
+        gCtx.fillStyle = 'white'
+        gCtx.font = line.size.toString() + 'px Arial'
+        var x
+        var y
+        if (line.id === 1) {
+            x = gCanvasData.height / 4
+            y = gCanvasData.height / 6
+        } else {
+            x = gCanvasData.height / 4
+            y = gCanvasData.height - 50
+        }
+        gCtx.fillText(line.txt, x, y)
+        gCtx.strokeText(line.txt, x, y)
+    })
+
 }
 
 function getMeme() {
@@ -53,8 +72,17 @@ function setColor(color) {
 function changeFontSize(sign) {
     if (sign === '➕') {
         gMeme.lines[gMeme.selectedLineIdx].size += 1
-    }else{
+    } else {
         gMeme.lines[gMeme.selectedLineIdx].size += (-1)
     }
     renderMeme()
+}
+
+function switchLine() {
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+        gMeme.selectedLineIdx = 0
+    } else {
+        gMeme.selectedLineIdx += 1
+    }
+    console.log(gMeme.selectedLineIdx)
 }
