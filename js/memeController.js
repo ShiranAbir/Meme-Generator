@@ -13,12 +13,8 @@ function renderMeme() {
 
 function onImgSelect(Image) {
     setImg(Image.id)
-    var elEditor = document.querySelector('.editor')
-    var elGallery = document.querySelector('.gallery')
-    var elMainNav = document.querySelector('.desktop-home')
-    elGallery.style.display = 'none'
-    elEditor.style.display = 'block'
-    elMainNav.style.display = 'none'
+    resetMeme()
+    showEditor()
 }
 
 function onSetColor(color) {

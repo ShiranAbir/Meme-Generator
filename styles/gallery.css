@@ -5,7 +5,8 @@
     grid-template-rows: repeat(3, 300px);
     gap: 10PX;
     background-color:#e3e3e3;
-    margin: 50px;
+    margin: auto;
+    padding: 2rem;
 }
 
 .meme-img{

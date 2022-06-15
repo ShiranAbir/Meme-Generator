@@ -64,8 +64,6 @@ function setLineTxt(newtxt) {
 
 function setImg(id) {
     gMeme.selectedImgId = id
-    console.log(id)
-    console.log(gMeme)
     renderMeme()
 }
 
@@ -91,4 +89,17 @@ function switchLine() {
         gMeme.selectedLineIdx += 1
     }
     console.log(gMeme.selectedLineIdx)
+}
+
+function showEditor(){
+    var elEditor = document.querySelector('.editor')
+    var elGallery = document.querySelector('.gallery')
+    var elMainNav = document.querySelector('.desktop-home')
+    elGallery.style.display = 'none'
+    elEditor.style.display = 'grid'
+    elMainNav.style.display = 'none'
+}
+
+function resetMeme(){
+    gMeme
 }

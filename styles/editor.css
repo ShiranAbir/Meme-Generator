@@ -1,9 +1,14 @@
-
-
 .editor{
-    display: none;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr;
 }
 
 .canvas-editor{
     border: 1px black solid;
+}
+
+.editor-panel{
+    text-align: right;
+    display: block;
 }

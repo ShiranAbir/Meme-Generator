@@ -45,18 +45,23 @@
         </section>
     </section>
     <section class="editor">
+        <canvas class="canvas-editor" height="600" width="600"></canvas>
         <section>
-            <div>
+            <div class="editor-panel">
                 <button onclick="onChangeFontSize(this.innerText)">➕</button>
                 <button onclick="onChangeFontSize(this.innerText)">➖</button>
                 <button onclick="onSwitchLine()">switch line</button>
                 <input onchange="onSetColor(value)" type="color" class="color-selector" value="#77baca" />
-                <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="text-input" type="text" value="Enter text here:">
+                <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="text-input" type="text"
+                    value="Enter text here:">
             </div>
         </section>
-        <canvas class="canvas-editor" height="600" width="600"></canvas>
     </section>
-    
+    <section class="about"></section>
+    <footer>
+        <h1>Logo</h1>
+        <p>all rights reserved 2022</p>
+    </footer>
 
 </body>
 
