@@ -19,9 +19,9 @@ var gMeme = {
 
 function drawText(text) {
     gCtx.lineWidth = 2;
-    gCtx.strokeStyle = 'brown'
-    gCtx.fillStyle = 'black'
-    gCtx.font = '40px Arial'
+    gCtx.strokeStyle = gMeme.lines[gMeme.selectedLineIdx].color
+    gCtx.fillStyle = 'white'
+    gCtx.font = gMeme.lines[gMeme.selectedLineIdx].size.toString() + 'px Arial'
     var x = gCanvasData.height / 4
     var y = gCanvasData.height / 6
     gCtx.fillText(text, x, y)
@@ -42,4 +42,19 @@ function setImg(id) {
     console.log(id)
     console.log(gMeme)
     renderMeme()
-} 
+}
+
+function setColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+    console.log(gMeme)
+    console.log('New color is:', color)
+}
+
+function changeFontSize(sign) {
+    if (sign === '➕') {
+        gMeme.lines[gMeme.selectedLineIdx].size += 1
+    }else{
+        gMeme.lines[gMeme.selectedLineIdx].size += (-1)
+    }
+    renderMeme()
+}

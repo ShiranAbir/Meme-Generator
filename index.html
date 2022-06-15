@@ -46,6 +46,9 @@
     <section class="editor">
         <section>
             <div>
+                <button onclick="onChangeFontSize(this.innerText)">➕</button>
+                <button onclick="onChangeFontSize(this.innerText)">➖</button>
+                <input onchange="onSetColor(value)" type="color" class="color-selector" value="#77baca" />
                 <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="text-input" type="text" value="Enter text here:">
             </div>
         </section>

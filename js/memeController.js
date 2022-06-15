@@ -15,3 +15,12 @@ function renderMeme() {
 function onImgSelect(Image) {
     setImg(Image.id)
 }
+
+function onSetColor(color) {
+    setColor(color)
+    console.log('Changing color to',color)
+}
+
+function onChangeFontSize(sign){
+    changeFontSize(sign)
+}
