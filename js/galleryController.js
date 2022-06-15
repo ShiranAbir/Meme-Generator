@@ -1,7 +1,14 @@
 'use strict'
 
 function renderGallery() {
-    var strHtmls = ['<img id="2" onclick="onImgSelect(this)" class="meme-img" src="../img/2.jpg" alt="">', '<img id="3" onclick="onImgSelect(this)" class="meme-img" src="../img/3.jpg" alt="">']
+    var strHtmls = ''
+    gImgs.forEach(img=>{
+        strHtmls += `<img id="${img.id}" onclick="onImgSelect(this)" class="meme-img" src="../img/${img.id}.jpg" alt="">`
+    })
     var elGallery = document.querySelector('.gallery')
-    elGallery.innerHTML += strHtmls
+    elGallery.innerHTML = strHtmls
+}
+
+function onShowGallery(){
+    showGallery()
 }

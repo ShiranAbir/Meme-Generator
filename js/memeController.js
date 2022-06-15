@@ -13,11 +13,16 @@ function renderMeme() {
 
 function onImgSelect(Image) {
     setImg(Image.id)
+    var elEditor = document.querySelector('.editor')
+    var elGallery = document.querySelector('.gallery')
+    var elMainNav = document.querySelector('.desktop-home')
+    elGallery.style.display = 'none'
+    elEditor.style.display = 'block'
+    elMainNav.style.display = 'none'
 }
 
 function onSetColor(color) {
     setColor(color)
-    console.log('Changing color to',color)
 }
 
 function onChangeFontSize(sign){

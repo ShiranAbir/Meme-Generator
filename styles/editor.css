@@ -1,4 +1,9 @@
 
+
+.editor{
+    display: none;
+}
+
 .canvas-editor{
     border: 1px black solid;
 }
