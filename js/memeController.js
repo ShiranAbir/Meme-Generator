@@ -1,11 +1,17 @@
 'use strict'
 
-function onImgSelected(img) {
-    var img = document.getElementById(img.id);
-    gCtx.drawImage(img,0,0,gCanvasData.width, gCanvasData.height);
+function renderMeme() {
+    var meme = getMeme()
+    var imgToRender = gImgs.find(img => img.id === +meme.selectedImgId)
+    var img = new Image()
+    img.onload = function () {
+        gCtx.drawImage(img, 0, 0, gCanvasData.width, gCanvasData.height)
+        var text = meme.lines[meme.selectedLineIdx].txt
+        drawText(text)
+    }
+    img.src = '../' + imgToRender.url
 }
 
-// function renderMeme(img) {
-//     gCtx.drawImage(img, 0, 0, gUserData.width, gUserData.height);
-// }
-
+function onImgSelect(Image) {
+    setImg(Image.id)
+}

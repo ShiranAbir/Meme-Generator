@@ -10,4 +10,5 @@ var gCanvasData = {
 function init(){
     gCanvas = document.querySelector('.canvas-editor')
     gCtx = gCanvas.getContext('2d')
+    renderGallery()
 }
