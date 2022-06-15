@@ -1,0 +1,11 @@
+
+.search-section{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+}
+
+.filter{
+    cursor: pointer;
+}

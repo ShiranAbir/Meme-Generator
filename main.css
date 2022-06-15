@@ -1,0 +1,12 @@
+
+      /* header style */
+@import url(styles/header.css);
+
+      /* search-section style */
+@import url(styles/search-section.css);
+
+      /* gallery style */
+@import url(styles/gallery.css);
+
+      /* editor style */
+@import url(styles/editor.css);

@@ -1,0 +1,16 @@
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(3, 300px);
+    gap: 10PX;
+    background-color:#e3e3e3;
+    margin: 50px;
+}
+
+.meme-img{
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+}
+

@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
-<body>
-    <section class="gallery">gallery</section>
-    <section class="editor">editor</section>
-    <script src="js/controller.js"></script>
-    <script src="js/service.js"></script>
-    
+
+<body onload="onInit()">
+    <header>
+        <nav class="main-nav">
+            <h1 class="logo">mylogo</h1>
+            <button class="gallery-btn">Gallery</button>
+            <button class="about-btn">About</button>
+        </nav>
+    </header>
+    <section class="desktop-home">
+        <section class="search-section">
+            <input class="text-search" type="text" placeholder="Enter search keyword">
+            <article name="funny" class="filter filter-funny">Funny</article>
+            <article name="comics" class="filter filter-comics">Comics</article>
+            <article name="dogs" class="filter filter-dogs">Dogs</article>
+            <article name="drinks" class="filter filter-drinks">Drinks</article>
+            <article name="books" class="filter filter-books">Books</article>
+        </section>
+        <section class="gallery">
+            <img id="1" onclick="onImgSelected(this)" class="meme-img" src="../img/1.jpg" alt="">
+            <img id="2" onclick="onImgSelected(this)" class="meme-img" src="../img/2.jpg" alt="">
+            <img id="3" onclick="onImgSelected(this)" class="meme-img" src="../img/3.jpg" alt="">
+            <img id="4" onclick="onImgSelected(this)" class="meme-img" src="../img/4.jpg" alt="">
+            <img id="5" onclick="onImgSelected(this)" class="meme-img" src="../img/5.jpg" alt="">
+            <img id="6" onclick="onImgSelected(this)" class="meme-img" src="../img/6.jpg" alt="">
+            <img id="7" onclick="onImgSelected(this)" class="meme-img" src="../img/7.jpg" alt="">
+            <img id="8" onclick="onImgSelected(this)" class="meme-img" src="../img/8.jpg" alt="">
+            <img id="9" onclick="onImgSelected(this)" class="meme-img" src="../img/9.jpg" alt="">
+        </section>
+    </section>
+    <section class="editor">
+        <canvas class="canvas-editor" height="600" width="600"></canvas>
+    </section>
+    <script src="js/mainController.js"></script>
+    <script src="js/mainService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/memeService.js"></script>
+
 </body>
+
 </html>
