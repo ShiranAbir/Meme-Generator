@@ -47,4 +47,8 @@ function onSave() {
     saveToStorage("memes", memes)
 }
 
+function onDownload(link){
+    downloadImg(link)
+}
+
 

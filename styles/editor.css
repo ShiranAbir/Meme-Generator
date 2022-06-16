@@ -15,55 +15,16 @@
 
 
 .edit {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". text-input text-input text-input ."
-      "switch-lines-btn switch-lines-btn color-selector . ."
-      ". increase-btn decrease-btn . ."
-      ". . . . ."
-      ". . . . ."
-      ". . . . ."
-      ". facebook-btn . . ."; 
-}
-
-.text-input {
-    grid-area: text-input;
-    height: 50%;
-}
-
-.switch-lines-btn {
-    grid-area: switch-lines-btn;
-    height: 50%;
-}
-
-.add-line-btn {
-    grid-area: add-line-btn;
-}
-
-.delete-btn {
-    grid-area: delete-btn;
-}
-
-.color-selector {
-    grid-area: color-selector;
-    height: 50%;
-    padding: 5px;
-    
-}
-
-.increase-btn {
-    grid-area: increase-btn;
-    height: 50%;
-}
-
-.decrease-btn {
-    grid-area: decrease-btn;
-    height: 50%;
-}
-
-.facebook-btn{
-    grid-area: facebook-btn;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . . . ."
+        "text-input text-input text-input text-input text-input"
+        "switch-lines-btn switch-lines-btn color-selector save-btn ."
+        ". increase-btn . decrease-btn ."
+        ". . . . ."
+        ". . . . ."
+        ". facebook-btn download-btn download-btn .";
 }

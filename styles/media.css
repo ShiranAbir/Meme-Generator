@@ -1,60 +1,87 @@
 /* Mobile */
 @media (max-width: 1010px) {
 
-    body{
-        display: flex;
-        flex-direction: column;
-        margin: 0;
+    .saved-img{
+        width: 100%;
     }
 
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
     .editor {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 5fr 2fr;
+        grid-template-rows: 1fr 2fr;
         max-width: 740px;
-        margin: auto;
-       
+        /* margin: auto; */
     }
 
     .canvas-editor {
         width: 100%;
-     
+        height: 100%;
+
     }
 
-    header {
+    .edit {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px 100px 100px;
+        grid-template-areas:
+            "text-input text-input text-input text-input text-input"
+            "switch-lines-btn switch-lines-btn color-selector save-btn save-btn"
+            "increase-btn increase-btn . decrease-btn decrease-btn"
+            "facebook-btn facebook-btn download-btn download-btn download-btn";
+    }
+
+    .main-nav {
         width: 100%;
-        
+        margin: 0;
     }
 
     footer {
         background-color: #ff7f00;
         text-align: center;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        height: 2rem;
+        position: fixed;
+        bottom: 0;
         margin: auto;
-        padding: 2rem;
-        width: 91%;
     }
-    .gallery{
-        max-width:740px ;
+
+    footer h1{
+        margin-top: 0;
+        text-align:inherit;
+    }
+
+    footer p {
+        display: block;
+    }
+
+    .gallery {
+        max-width: 740px;
         display: grid;
-        grid-template-columns: repeat(1, 43em);
-        grid-template-rows: repeat(9, 43em);
-        background-color:#e3e3e3;
+        grid-template-columns: repeat(1, 15em);
+        grid-template-rows: repeat(9, 15em);
+        background-color: #e3e3e3;
         margin: auto;
         padding: 2rem;
         padding: 20px;
         align-items: center;
     }
-    .meme-img{
+
+
+    .meme-img {
         cursor: pointer;
         width: 100%;
         height: 100%;
     }
 
-    .search-section{
+    .search-section {
         width: 100%;
+        display: none;
     }
 
 }

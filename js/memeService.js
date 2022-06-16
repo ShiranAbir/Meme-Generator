@@ -100,9 +100,11 @@ function showEditor() {
     var elEditor = document.querySelector('.editor')
     var elGallery = document.querySelector('.gallery')
     var elMainNav = document.querySelector('.desktop-home')
+    var elAbout = document.querySelector('.about')
     elGallery.style.display = 'none'
     elEditor.style.display = 'grid'
     elMainNav.style.display = 'none'
+    elAbout.style.display = 'none'
 }
 
 function ShareMeme() {
@@ -187,5 +189,10 @@ function onMemeSelect(idx) {
     renderMeme()
     showEditor()
     elMyMemeSec.style.display = 'none'
+}
+
+function downloadImg(elLink) {
+    var imgContent = gCanvas.toDataURL('image/jpeg')// image/jpeg the default format
+    elLink.href = imgContent
 }
 
