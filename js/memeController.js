@@ -55,4 +55,11 @@ function onChangeFont(font) {
     changeFont(font)
 }
 
+function onAddLine(){
+    addLine()
+}
+
+function onDeleteLine(){
+    deleteLine()
+}
 

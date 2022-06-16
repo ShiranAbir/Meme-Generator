@@ -39,7 +39,6 @@ var gMeme = {
             x: 150,
             y: 550
         },
-        // height: 0,
         width: 0
     }
 
@@ -101,6 +100,8 @@ function showEditor() {
     var elGallery = document.querySelector('.gallery')
     var elMainNav = document.querySelector('.desktop-home')
     var elAbout = document.querySelector('.about')
+    var elAbout = document.querySelector('.about')
+    elGallery.style.display = 'grid'
     elGallery.style.display = 'none'
     elEditor.style.display = 'grid'
     elMainNav.style.display = 'none'
@@ -142,6 +143,8 @@ function showMyMeme() {
     var elEditor = document.querySelector('.editor')
     var elGallery = document.querySelector('.gallery')
     var elMainNav = document.querySelector('.desktop-home')
+    var elAbout = document.querySelector('.about')
+    elAbout.style.display = 'none'
     elMyMemeSec.style.display = 'block'
     elGallery.style.display = 'none'
     elMainNav.style.display = 'none'
@@ -196,9 +199,33 @@ function downloadImg(elLink) {
     elLink.href = imgContent
 }
 
-function changeFont(font){
+function changeFont(font) {
     console.log(font);
     gMeme.font = font
+    renderMeme()
+}
+
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    renderMeme()
+}
+
+function addLine() {
+
+    var newLine = {
+        id: gMeme.lines.length + 1,
+        txt: 'Enter your text here',
+        size: 40,
+        align: 'left',
+        color: 'black',
+        isDrag: false,
+        pos: {
+            x: 150,
+            y: 300
+        },
+        width: 0
+    }
+    gMeme.lines.push(newLine)
     renderMeme()
 }
 

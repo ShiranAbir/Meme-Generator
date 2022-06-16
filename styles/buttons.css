@@ -87,3 +87,14 @@
     grid-area: font-btn;
     height: 50%;
 }
+
+
+.delete-line-btn{
+    grid-area: delete-line-btn;
+    height: 50%;
+}
+
+.add-line-btn{
+    grid-area: add-line-btn;
+    height: 50%;
+}

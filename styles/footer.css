@@ -18,3 +18,22 @@ footer p {
     color: #ffffff;
     font-family: Montserrat-thin;
 }
+
+.about-p{
+    max-width: 400px;
+    text-align: left;
+    margin: auto;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 150px;
+    padding-top: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.about-h1{
+    padding-top: 30px;
+    max-width: 400px;
+    text-align: left;
+    margin: auto;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
