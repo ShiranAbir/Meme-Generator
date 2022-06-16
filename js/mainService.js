@@ -13,4 +13,5 @@ function init(){
     renderGallery()
     showGallery()
     addListeners()
+    savedMemes = loadFromStorage('myMemes')
 }

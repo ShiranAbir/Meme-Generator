@@ -20,11 +20,11 @@ function onSetColor(color) {
     setColor(color)
 }
 
-function onChangeFontSize(sign){
+function onChangeFontSize(sign) {
     changeFontSize(sign)
 }
 
-function onSwitchLine(){
+function onSwitchLine() {
     switchLine()
 }
 
@@ -32,11 +32,19 @@ function onShare() {
     ShareMeme()
 }
 
-function onShowMyMeme(){
+function onShowMyMeme() {
     showMyMeme()
 }
 
-function onSave(){
-    saveToStorage('myMemes', gMeme)
+function onSave() {
+    var memes = loadFromStorage("memes")
+    if (!memes) { 
+        memes = []
+    }
+    gMeme.imgContent = gCanvas.toDataURL('image/jpeg')
+
+    memes.push(gMeme)
+    saveToStorage("memes", memes)
 }
+
 

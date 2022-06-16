@@ -3,7 +3,16 @@
 }
 
 .saved-meme{
+    max-width: 988px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    cursor: pointer;
+}
+
+.saved-img{
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
 }

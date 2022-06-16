@@ -22,20 +22,28 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    // if (!isLineClicked(pos)) return
+    // if(!isDrag) return
+    if (!isLineClicked(pos)) return
     setElementDrag(true)
     gStartPos = pos
     document.body.style.cursor = 'grabbing'
 
 }
 
-// function isLineClicked(clickedPos) {
-//     const { pos } = gMeme.lines[gMeme.selectedLineIdx]
-//     // Calc the distance between two dots
-//     const distance = Math.sqrt((pos.x - clickedPos.x) ** 2 + (pos.y - clickedPos.y) ** 2)
-//     //If its smaller then the radius of the circle we are inside
-//     return distance <= gMeme.lines[gMeme.selectedLineIdx].size
-// }
+function isLineClicked(clickedPos) {
+    const pos = gMeme.lines[gMeme.selectedLineIdx].pos
+    console.log(clickedPos);
+    console.log(gMeme.lines[gMeme.selectedLineIdx].width)
+    if (clickedPos.x < gMeme.lines[gMeme.selectedLineIdx].width + pos.x
+        && clickedPos.y < 50 + pos.y){
+        // gMeme.lines[gMeme.selectedLineIdx].isDrag = true
+        return true
+    }
+    
+    console.log(gMeme.lines[gMeme.selectedLineIdx].pos);
+
+    // return true
+}
 
 function onMove(ev) {
     const meme = getMeme();
@@ -90,8 +98,6 @@ function setElementDrag(isDrag) {
 }
 
 function moveElement(dx, dy) {
-    console.log(gMeme.selectedLineIdx);
-    console.log(gMeme.lines[gMeme.selectedLineIdx]);
     gMeme.lines[gMeme.selectedLineIdx].pos.x += dx
     gMeme.lines[gMeme.selectedLineIdx].pos.y += dy
 

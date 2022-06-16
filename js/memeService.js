@@ -10,6 +10,8 @@ var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['man', 'funny'] },
 { id: 8, url: 'img/8.jpg', keywords: ['funny', 'man'] },
 { id: 9, url: 'img/9.jpg', keywords: ['funny', 'baby'] }]
 
+var savedMemes
+
 
 var gMeme = {
     selectedLineIdx: 0,
@@ -20,8 +22,10 @@ var gMeme = {
         align: 'left',
         color: 'red',
         isDrag: false,
-        pos: {x: 150,
-            y: 100}
+        pos: {
+            x: 150,
+            y: 100
+        }
     },
     {
         id: 2,
@@ -30,8 +34,12 @@ var gMeme = {
         align: 'left',
         color: 'red',
         isDrag: false,
-        pos: {x: 150,
-            y: 550}
+        pos: {
+            x: 150,
+            y: 550
+        },
+        // height: 0,
+        width: 0
     }
 
     ]
@@ -43,15 +51,7 @@ function drawText() {
         gCtx.strokeStyle = line.color
         gCtx.fillStyle = 'white'
         gCtx.font = line.size.toString() + 'px Arial'
-        // var x
-        // var y
-        // if (line.id === 1) {
-        //     x = gCanvasData.height / 4
-        //     y = gCanvasData.height / 6
-        // } else {
-        //     x = gCanvasData.height / 4
-        //     y = gCanvasData.height - 50
-        // }
+        line.width = gCtx.measureText(line.txt).width
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     })
@@ -135,24 +135,40 @@ function doUploadImg(imgDataUrl, onSuccess) {
         })
 }
 
-function showMyMeme(){
+function showMyMeme() {
     var elMyMemeSec = document.querySelector('.my-meme')
+    var elEditor = document.querySelector('.editor')
     var elGallery = document.querySelector('.gallery')
     var elMainNav = document.querySelector('.desktop-home')
     elMyMemeSec.style.display = 'block'
     elGallery.style.display = 'none'
     elMainNav.style.display = 'none'
-    gMeme = loadFromStorage('myMemes')
-    renderMeme()
+    elEditor.style.display = 'none'
+
+    var memes = loadFromStorage("memes")
+    if (!memes) {
+        memes = []
+    }
+
+    var strHtmls = ''
+    var i = 0
+    memes.forEach(meme => {
+        strHtmls += `<img onclick="onMemeSelect(${i})" class="saved-img" src="${meme.imgContent}" alt="">`
+        i += 1
+    })
+
+    var elMymemes = document.querySelector('.saved-meme')
+    elMymemes.innerHTML = strHtmls
 }
 
 function renderMyMeme() {
     var strHtmls = ''
-    gImgs.forEach(img=>{
-        strHtmls += `<img id="${img.id}" onclick="onImgSelect(this)" class="meme-img" src="../img/${img.id}.jpg" alt="">`
+    var savedMemes = loadFromStorage('myMemes')
+    savedMemes.forEach(meme => {
+        strHtmls += `<canvas class="canvas-editor" height="200" width="200"></canvas>`
     })
     var elGallery = document.querySelector('.gallery')
-    elGallery.innerHTML = strHtmls
+    elGallery.innerHTML += strHtmls
 }
 
 function saveToStorage(key, val) {
@@ -163,3 +179,13 @@ function loadFromStorage(key) {
     var val = localStorage.getItem(key)
     return JSON.parse(val)
 }
+
+function onMemeSelect(idx) {
+    var elMyMemeSec = document.querySelector('.my-meme')
+    var memes = loadFromStorage("memes")
+    gMeme = memes[idx]
+    renderMeme()
+    showEditor()
+    elMyMemeSec.style.display = 'none'
+}
+
