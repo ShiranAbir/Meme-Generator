@@ -82,3 +82,8 @@
     grid-area: save-btn;
     height: 50%;
 }
+
+.font-btn{
+    grid-area: font-btn;
+    height: 50%;
+}

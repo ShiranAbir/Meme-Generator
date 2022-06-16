@@ -51,4 +51,8 @@ function onDownload(link){
     downloadImg(link)
 }
 
+function onChangeFont(font) {
+    changeFont(font)
+}
+
 

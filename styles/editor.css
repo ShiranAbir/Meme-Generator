@@ -22,7 +22,7 @@
     grid-template-areas:
         ". . . . ."
         "text-input text-input text-input text-input text-input"
-        "switch-lines-btn switch-lines-btn color-selector save-btn ."
+        "switch-lines-btn switch-lines-btn color-selector save-btn font-btn"
         ". increase-btn . decrease-btn ."
         ". . . . ."
         ". . . . ."

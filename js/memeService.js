@@ -15,12 +15,13 @@ var savedMemes
 
 var gMeme = {
     selectedLineIdx: 0,
+    font: 'Impact',
     lines: [{
         id: 1,
         txt: 'Enter your text here',
         size: 40,
         align: 'left',
-        color: 'red',
+        color: 'black',
         isDrag: false,
         pos: {
             x: 150,
@@ -32,7 +33,7 @@ var gMeme = {
         txt: 'Enter your text here',
         size: 40,
         align: 'left',
-        color: 'red',
+        color: 'black',
         isDrag: false,
         pos: {
             x: 150,
@@ -50,7 +51,7 @@ function drawText() {
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = line.color
         gCtx.fillStyle = 'white'
-        gCtx.font = line.size.toString() + 'px Arial'
+        gCtx.font = line.size.toString() + 'px ' + gMeme.font
         line.width = gCtx.measureText(line.txt).width
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
@@ -74,8 +75,7 @@ function setImg(id) {
 
 function setColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
-    console.log(gMeme)
-    console.log('New color is:', color)
+    renderMeme()
 }
 
 function changeFontSize(sign) {
@@ -194,5 +194,11 @@ function onMemeSelect(idx) {
 function downloadImg(elLink) {
     var imgContent = gCanvas.toDataURL('image/jpeg')// image/jpeg the default format
     elLink.href = imgContent
+}
+
+function changeFont(font){
+    console.log(font);
+    gMeme.font = font
+    renderMeme()
 }
 
