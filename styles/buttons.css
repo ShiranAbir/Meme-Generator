@@ -1,0 +1,31 @@
+
+.main-btn{
+    background-color: #ff7f00;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Montserrat-regular;
+    font-size: 1.5rem;
+}
+
+.gallery-btn{
+    grid-column-start: 9;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.about-btn{
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.edit-btn{
+    border: none;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: 5px;
+    font-family: Montserrat-regular ;
+}

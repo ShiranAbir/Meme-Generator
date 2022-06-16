@@ -18,9 +18,9 @@
 <body onload="onInit()">
     <header>
         <nav class="main-nav">
-            <h1 class="logo">mylogo</h1>
-            <button onclick="onShowGallery()" class="gallery-btn">Gallery</button>
-            <button class="about-btn">About</button>
+            <h1 class="logo">Mememe🐑</h1>
+            <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
+            <button class="main-btn about-btn">About</button>
         </nav>
     </header>
     <section class="desktop-home">
@@ -30,36 +30,25 @@
             <article name="comics" class="filter filter-comics">Comics</article>
             <article name="dogs" class="filter filter-dogs">Dogs</article>
             <article name="drinks" class="filter filter-drinks">Drinks</article>
-            <article name="books" class="filter filter-books">Books</article>
         </section>
         <section class="gallery">
-            <!-- <img id="1" onclick="onImgSelected(this)" class="meme-img" src="../img/1.jpg" alt="">
-            <img id="2" onclick="onImgSelected(this)" class="meme-img" src="../img/2.jpg" alt="">
-            <img id="3" onclick="onImgSelected(this)" class="meme-img" src="../img/3.jpg" alt="">
-            <img id="4" onclick="onImgSelected(this)" class="meme-img" src="../img/4.jpg" alt="">
-            <img id="5" onclick="onImgSelected(this)" class="meme-img" src="../img/5.jpg" alt="">
-            <img id="6" onclick="onImgSelected(this)" class="meme-img" src="../img/6.jpg" alt="">
-            <img id="7" onclick="onImgSelected(this)" class="meme-img" src="../img/7.jpg" alt="">
-            <img id="8" onclick="onImgSelected(this)" class="meme-img" src="../img/8.jpg" alt="">
-            <img id="9" onclick="onImgSelected(this)" class="meme-img" src="../img/9.jpg" alt=""> -->
         </section>
     </section>
     <section class="editor">
         <canvas class="canvas-editor" height="600" width="600"></canvas>
-        <section>
-            <div class="editor-panel">
-                <button onclick="onChangeFontSize(this.innerText)">➕</button>
-                <button onclick="onChangeFontSize(this.innerText)">➖</button>
-                <button onclick="onSwitchLine()">switch line</button>
-                <input onchange="onSetColor(value)" type="color" class="color-selector" value="#77baca" />
-                <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="text-input" type="text"
+        <section class="edit">
+                <button class="edit-btn increase-btn" onclick="onChangeFontSize(this.innerText)">➕</button>
+                <button class="edit-btn decrease-btn" onclick="onChangeFontSize(this.innerText)">➖</button>
+                <button class="edit-btn switch-lines-btn" onclick="onSwitchLine()">switch line</button>
+                <input onchange="onSetColor(value)" type="color" class="edit-btn color-selector" value="#77baca" />
+                <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="edit-btn text-input" type="text"
                     value="Enter text here:">
-            </div>
+                <button onclick="onShare()" class="edit-btn facebook-btn">SHARE</button>    
         </section>
     </section>
     <section class="about"></section>
     <footer>
-        <h1>Logo</h1>
+        <h1>Mememe🐑</h1>
         <p>all rights reserved 2022</p>
     </footer>
 

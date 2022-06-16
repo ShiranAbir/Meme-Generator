@@ -1,7 +1,18 @@
-
-footer{
+footer {
     background-color: #ff7f00;
     text-align: center;
     display: block;
+    max-width: 920px;
+    margin: auto;
+    height: 10rem;
+    padding: 2rem;
+}
 
+footer h1 {
+    font-family: Fascinate-Regular;
+    color: #ffffff;
+}
+footer p {
+    color: #ffffff;
+    font-family: Montserrat-thin;
 }

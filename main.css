@@ -13,3 +13,12 @@
 
       /* footer style */
 @import url(styles/footer.css);
+
+      /* buttons style */
+@import url(styles/buttons.css);
+
+      /* media style */
+@import url(styles/media.css);
+
+      /* fonts style */
+@import url(styles/fonts.css);

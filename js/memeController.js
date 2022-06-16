@@ -13,7 +13,6 @@ function renderMeme() {
 
 function onImgSelect(Image) {
     setImg(Image.id)
-    resetMeme()
     showEditor()
 }
 
@@ -27,4 +26,8 @@ function onChangeFontSize(sign){
 
 function onSwitchLine(){
     switchLine()
+}
+
+function onShare() {
+    ShareMeme()
 }

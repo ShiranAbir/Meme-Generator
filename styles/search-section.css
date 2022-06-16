@@ -1,11 +1,23 @@
-
-.search-section{
+.search-section {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    column-gap: 30px;
+    column-gap: 20px;
+    text-align: center;
+    margin: auto;
+    height: 3rem;
+    padding: 40px 0;
 }
 
-.filter{
+.filter {
     cursor: pointer;
+    font-family: Montserrat-regular;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.text-search {
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
 }

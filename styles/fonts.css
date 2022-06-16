@@ -1,0 +1,24 @@
+
+/* Montserrat-regular */
+@font-face {
+    font-family: Montserrat-regular;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+/* Montserrat-medium */
+@font-face {
+    font-family: Montserrat-medium;
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+/* Montserrat-thin */
+@font-face {
+    font-family: Montserrat-thin;
+    src: url(../fonts/Montserrat-Thin.ttf);
+}
+
+/* Fascinate-Regular */
+@font-face {
+    font-family: Fascinate-Regular;
+    src: url(../fonts/Fascinate-Regular.ttf);
+}
