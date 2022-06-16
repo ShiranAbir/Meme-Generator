@@ -31,3 +31,12 @@ function onSwitchLine(){
 function onShare() {
     ShareMeme()
 }
+
+function onShowMyMeme(){
+    showMyMeme()
+}
+
+function onSave(){
+    saveToStorage('myMemes', gMeme)
+}
+

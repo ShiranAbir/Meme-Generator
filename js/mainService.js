@@ -12,4 +12,5 @@ function init(){
     gCtx = gCanvas.getContext('2d')
     renderGallery()
     showGallery()
+    addListeners()
 }

@@ -12,21 +12,26 @@ var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['man', 'funny'] },
 
 
 var gMeme = {
-    selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
-        id:1,
+        id: 1,
         txt: 'Enter your text here',
         size: 40,
         align: 'left',
-        color: 'red'
+        color: 'red',
+        isDrag: false,
+        pos: {x: 150,
+            y: 100}
     },
     {
-        id:2,
+        id: 2,
         txt: 'Enter your text here',
         size: 40,
         align: 'left',
-        color: 'red'
+        color: 'red',
+        isDrag: false,
+        pos: {x: 150,
+            y: 550}
     }
 
     ]
@@ -38,17 +43,17 @@ function drawText() {
         gCtx.strokeStyle = line.color
         gCtx.fillStyle = 'white'
         gCtx.font = line.size.toString() + 'px Arial'
-        var x
-        var y
-        if (line.id === 1) {
-            x = gCanvasData.height / 4
-            y = gCanvasData.height / 6
-        } else {
-            x = gCanvasData.height / 4
-            y = gCanvasData.height - 50
-        }
-        gCtx.fillText(line.txt, x, y)
-        gCtx.strokeText(line.txt, x, y)
+        // var x
+        // var y
+        // if (line.id === 1) {
+        //     x = gCanvasData.height / 4
+        //     y = gCanvasData.height / 6
+        // } else {
+        //     x = gCanvasData.height / 4
+        //     y = gCanvasData.height - 50
+        // }
+        gCtx.fillText(line.txt, line.pos.x, line.pos.y)
+        gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     })
 
 }
@@ -91,7 +96,7 @@ function switchLine() {
     console.log(gMeme.selectedLineIdx)
 }
 
-function showEditor(){
+function showEditor() {
     var elEditor = document.querySelector('.editor')
     var elGallery = document.querySelector('.gallery')
     var elMainNav = document.querySelector('.desktop-home')
@@ -100,16 +105,16 @@ function showEditor(){
     elMainNav.style.display = 'none'
 }
 
-function ShareMeme(){
+function ShareMeme() {
     var gElCanvas = document.querySelector('.canvas-editor')
     const imgDataUrl = gElCanvas.toDataURL("image/jpeg")
 
     function onSuccess(uploadedImgUrl) {
-        
+
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`,'_blank')
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`, '_blank')
     }
-    
+
     doUploadImg(imgDataUrl, onSuccess);
 }
 
@@ -122,10 +127,39 @@ function doUploadImg(imgDataUrl, onSuccess) {
     })
         .then(res => res.text())
         .then((url) => {
-          
+
             onSuccess(url)
         })
         .catch((err) => {
             console.error(err)
         })
+}
+
+function showMyMeme(){
+    var elMyMemeSec = document.querySelector('.my-meme')
+    var elGallery = document.querySelector('.gallery')
+    var elMainNav = document.querySelector('.desktop-home')
+    elMyMemeSec.style.display = 'block'
+    elGallery.style.display = 'none'
+    elMainNav.style.display = 'none'
+    gMeme = loadFromStorage('myMemes')
+    renderMeme()
+}
+
+function renderMyMeme() {
+    var strHtmls = ''
+    gImgs.forEach(img=>{
+        strHtmls += `<img id="${img.id}" onclick="onImgSelect(this)" class="meme-img" src="../img/${img.id}.jpg" alt="">`
+    })
+    var elGallery = document.querySelector('.gallery')
+    elGallery.innerHTML = strHtmls
+}
+
+function saveToStorage(key, val) {
+    localStorage.setItem(key, JSON.stringify(val))
+}
+
+function loadFromStorage(key) {
+    var val = localStorage.getItem(key)
+    return JSON.parse(val)
 }
