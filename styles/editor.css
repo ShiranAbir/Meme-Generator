@@ -15,16 +15,14 @@
 
 
 .edit {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        ". . . . ."
-        "text-input text-input text-input text-input text-input"
-        "switch-lines-btn switch-lines-btn color-selector save-btn font-btn"
-        ". increase-btn decrease-btn add-line-btn delete-line-btn"
-        ". . . . ."
-        ". . . . ."
-        ". facebook-btn download-btn download-btn .";
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "text-input text-input text-input text-input"
+      "switch-lines-btn color-selector font-btn font-btn"
+      "decrease-btn increase-btn add-line-btn delete-line-btn"
+      "save-btn facebook-btn download-btn ."; 
 }

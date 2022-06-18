@@ -29,11 +29,13 @@
     border-radius: 20px;
     margin: 5px;
     font-family: Montserrat-regular ;
+    font-size: 40px;
 }
 
 .text-input {
     grid-area: text-input;
     height: 50%;
+    font-size: 20px;
 }
 
 .switch-lines-btn {
@@ -43,10 +45,12 @@
 
 .add-line-btn {
     grid-area: add-line-btn;
+    height: 50%;
 }
 
 .delete-btn {
     grid-area: delete-btn;
+    height: 50%;
 }
 
 .color-selector {
@@ -68,14 +72,15 @@
 
 .facebook-btn{
     grid-area: facebook-btn;
+    height: 50%;
 }
 
 .download-btn{
     grid-area: download-btn;
-    text-decoration: none;
     color: black;
+    height: 50%;
     text-align: center;
-    padding: 35px 0
+    line-height: 86px;
 }
 
 .save-btn{
@@ -86,6 +91,7 @@
 .font-btn{
     grid-area: font-btn;
     height: 50%;
+    font-size: 20px;
 }
 
 

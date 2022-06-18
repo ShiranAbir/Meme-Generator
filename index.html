@@ -14,12 +14,13 @@
     <script src="js/mainService.js"></script>
     <script src="js/galleryService.js"></script>
     <script src="js/dragDrop.js"></script>
+    <script src="js/fontAwesome.js"></script>
 </head>
 
 <body onload="onInit()">
     <header>
         <nav class="main-nav">
-            <h1 class="logo">Mememe🐑</h1>
+            <h1 onclick="onShowGallery()" class="logo">Mememe🐑</h1>
             <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
             <button class="main-btn about-btn">About</button>
             <button onclick="onShowMyMeme()" class="main-btn my-meme-btn">My Meme</button>
@@ -29,9 +30,9 @@
         <section class="search-section">
             <input class="text-search" type="text" placeholder="Enter search keyword">
             <article name="funny" class="filter filter-funny">Funny</article>
-            <article name="comics" class="filter filter-comics">Comics</article>
-            <article name="dogs" class="filter filter-dogs">Dogs</article>
-            <article name="drinks" class="filter filter-drinks">Drinks</article>
+            <article name="comics" class="filter filter-comics">Cute</article>
+            <article name="dogs" class="filter filter-dogs">Cool</article>
+            <article name="drinks" class="filter filter-drinks">Cartoon</article>
         </section>
         <section class="gallery">
         </section>
@@ -39,22 +40,22 @@
     <section class="editor">
         <canvas class="canvas-editor" height="600" width="600"></canvas>
         <section class="edit">
-                <button class="edit-btn increase-btn" onclick="onChangeFontSize(this.innerText)">➕</button>
-                <button class="edit-btn decrease-btn" onclick="onChangeFontSize(this.innerText)">➖</button>
-                <button class="edit-btn switch-lines-btn" onclick="onSwitchLine()">switch line</button>
+                <button class="edit-btn increase-btn" value="+" onclick="onChangeFontSize(this.value)"><i class="fa-solid fa-plus"></i></button>
+                <button class="edit-btn decrease-btn" value="-" onclick="onChangeFontSize(this.value)"><i class="fa-solid fa-minus"></i></button>
+                <button class="edit-btn switch-lines-btn" onclick="onSwitchLine()"><i class="fa-solid fa-repeat"></i></button>
                 <input onchange="onSetColor(value)" type="color" class="edit-btn color-selector" value="#77baca" />
                 <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="edit-btn text-input" type="text"
                     value="Enter text here:">
-                <button onclick="onShare()" class="edit-btn facebook-btn">SHARE</button> 
-                <button onclick="onSave()" class="edit-btn save-btn">SAVE</button>   
-                <a href="#" class="edit-btn download-btn" onclick="onDownload(this)" download="my-img.jpg">Download</a>
+                <button onclick="onShare()" class="edit-btn facebook-btn"><i class="fa-brands fa-facebook-square"></i></button> 
+                <button onclick="onSave()" class="edit-btn save-btn"><i class="fa-solid fa-floppy-disk"></i></button>   
+                <a href="#" class="edit-btn download-btn" onclick="onDownload(this)" download="my-img.jpg"><i class="fa-solid fa-download"></i></a>
                 <select onchange="onChangeFont(this.value)" class="edit-btn font-btn">
                     <option value="impact">Impact</option>
                     <option value="ariel">Ariel</option>
                     <option value="sans-serif">Sans-Serif</option>
                 </select>
-                <button class="edit-btn add-line-btn" onclick="onAddLine()">Add line</button>
-                <button class="edit-btn delete-line-btn" onclick="onDeleteLine()">Delete line</button>
+                <button class="edit-btn add-line-btn" onclick="onAddLine()"><i class="fa-solid fa-circle-plus"></i></button>
+                <button class="edit-btn delete-line-btn" onclick="onDeleteLine()"><i class="fa-solid fa-trash-can"></i></button>
         </section>
     </section>
     <section class="my-meme">

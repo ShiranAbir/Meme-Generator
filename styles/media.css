@@ -26,15 +26,20 @@
     }
 
     .edit {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 100px 100px 100px 100px 100px;
-        grid-template-areas:
-            "text-input text-input text-input text-input text-input"
-            "switch-lines-btn switch-lines-btn color-selector save-btn save-btn"
-            "increase-btn increase-btn . decrease-btn decrease-btn"
-            "facebook-btn facebook-btn download-btn download-btn font-btn"
-            "delete-line-btn add-line-btn . . .";
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "text-input text-input text-input text-input"
+          "switch-lines-btn color-selector ."
+          "increase-btn decrease-btn ."
+          "delete-line-btn add-line-btn ."
+          "save-btn facebook-btn download-btn";
+    }
+
+    .color-selector{
+        width:80%;
     }
 
     .main-nav {
@@ -93,6 +98,13 @@
     .search-section {
         width: 100%;
         display: none;
+    }
+    .download-btn{
+        grid-area: download-btn;
+        color: black;
+        height: 50%;
+        text-align: center;
+        line-height: 50px;
     }
 
 }

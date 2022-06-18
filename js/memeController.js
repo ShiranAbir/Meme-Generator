@@ -45,6 +45,7 @@ function onSave() {
 
     memes.push(gMeme)
     saveToStorage("memes", memes)
+    alert('Meme saved!')
 }
 
 function onDownload(link){
