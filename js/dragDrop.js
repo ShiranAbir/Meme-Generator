@@ -22,7 +22,6 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    // if(!isDrag) return
     if (!isLineClicked(pos)) return
     setElementDrag(true)
     gStartPos = pos
@@ -31,17 +30,21 @@ function onDown(ev) {
 }
 
 function isLineClicked(clickedPos) {
-    const pos = gMeme.lines[gMeme.selectedLineIdx].pos
-
-    if (clickedPos.x < gMeme.lines[gMeme.selectedLineIdx].width + pos.x
-        && clickedPos.y < 50 + pos.y){
-        // gMeme.lines[gMeme.selectedLineIdx].isDrag = true
-        return true
-    }
-    
- 
-
-    // return true
+    var i = gMeme.lines.findIndex(line => {
+        const textHeight = line.size
+        const pos = line.pos
+        const textWidth = line.width
+        const padding = 10
+        if (clickedPos.x < textWidth + pos.x + padding
+            && clickedPos.x > pos.x - padding
+            && clickedPos.y < textHeight + pos.y + padding
+            && clickedPos.y > pos.y - padding) {
+            return true
+        }
+    })
+    if (i === -1) return false
+    gMeme.selectedLineIdx = i
+    return true
 }
 
 function onMove(ev) {
