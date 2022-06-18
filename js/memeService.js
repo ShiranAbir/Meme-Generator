@@ -42,7 +42,6 @@ function drawText() {
         gCtx.fillStyle = 'white'
         gCtx.font = line.size.toString() + 'px ' + gMeme.font
         line.width = gCtx.measureText(line.txt).width
-        console.log(`line pos: ${line.pos.x} ${line.pos.y}`)
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     })
@@ -226,7 +225,6 @@ function downloadImg(elLink) {
 }
 
 function changeFont(font) {
-    console.log(font);
     gMeme.font = font
     renderMeme()
 }

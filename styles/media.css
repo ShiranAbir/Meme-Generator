@@ -29,8 +29,11 @@
     .edit {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 110px 110px 110px 160px 110px 110px;
         gap: 0px 0px;
+        text-align: center;
+        align-items: center ;
+
         grid-template-areas:
             "text-input text-input text-input text-input"
             ". color-selector ."

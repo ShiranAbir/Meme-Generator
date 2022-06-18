@@ -23,6 +23,8 @@ function addTouchListeners() {
 
 function addResizeListener() {
     window.addEventListener('resize', function(event) {
+        var elEditor = document.querySelector('.editor')
+        if (elEditor.style.display!=='grid') return
         resizeCanvas()
         renderMeme()
     }, true)
@@ -30,7 +32,6 @@ function addResizeListener() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    console.log(pos);
     if (!isLineClicked(pos)) return
     setElementDrag(true)
     gStartPos = pos
@@ -44,8 +45,6 @@ function isLineClicked(clickedPos) {
         const pos = line.pos
         const textWidth = line.width
         const padding = textHeight / 2 + 10
-        console.log(`clickedPos: ${clickedPos.x} ${clickedPos.y}`)
-        console.log(`pos: ${pos.x} ${pos.y}`)
         if (clickedPos.x < textWidth + pos.x
             && clickedPos.x > pos.x
             && clickedPos.y < textHeight + pos.y - padding

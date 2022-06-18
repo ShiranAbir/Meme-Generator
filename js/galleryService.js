@@ -74,7 +74,6 @@ function keywordSize(filter) {
 
     var elFilter = elFilters.find(elFilter => elFilter.name === filter).value
     elFilter.style.fontSize = gKeywordSearchCountMap[filter] + 'rem'
-    console.log(gKeywordSearchCountMap);
 }
 
 function setTheme(theme) {
