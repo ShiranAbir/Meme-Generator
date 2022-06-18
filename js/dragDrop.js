@@ -6,7 +6,7 @@ var gStartPos
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
-    // addResizeListener()
+    addResizeListener()
 }
 
 function addMouseListeners() {

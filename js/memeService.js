@@ -59,15 +59,8 @@ function setLineTxt(newtxt) {
 
 function setImg(id) {
     resetMeme()
-    // test()
     gMeme.selectedImgId = id
     renderMeme()
-}
-
-function test() {
-    window.addEventListener('resize', () =>{
-        document.querySelector('.canvas-editor').height(document.querySelector('.canvas-editor').width() / 2.031);
-    })
 }
 
 function resetMeme(){
