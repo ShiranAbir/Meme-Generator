@@ -8,7 +8,7 @@ function renderMeme() {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText()
     }
-    img.src = '../' + imgToRender.url
+    img.src = './' + imgToRender.url
 }
 
 function onImgSelect(Image) {

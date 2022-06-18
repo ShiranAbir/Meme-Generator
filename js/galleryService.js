@@ -52,6 +52,13 @@ function showGallery() {
     elMainNav.style.display = 'grid'
     elMyMemeSec.style.display = 'none'
     elAbout.style.display = 'block'
+    clearCanvas()
+}
+
+function clearCanvas(){
+    gCanvas = document.querySelector('.canvas-editor')
+    gCtx = gCanvas.getContext('2d')
+    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
 }
 
 function setFilter(filter) {
