@@ -5,7 +5,7 @@ function renderMeme() {
     var imgToRender = gImgs.find(img => img.id === +meme.selectedImgId)
     var img = new Image()
     img.onload = function () {
-        gCtx.drawImage(img, 0, 0, gCanvasData.width, gCanvasData.height)
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText()
     }
     img.src = '../' + imgToRender.url

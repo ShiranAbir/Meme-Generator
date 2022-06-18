@@ -38,11 +38,6 @@
     font-size: 20px;
 }
 
-.switch-lines-btn {
-    grid-area: switch-lines-btn;
-    height: 50%;
-}
-
 .add-line-btn {
     grid-area: add-line-btn;
     height: 50%;

@@ -42,6 +42,7 @@ function drawText() {
         gCtx.fillStyle = 'white'
         gCtx.font = line.size.toString() + 'px ' + gMeme.font
         line.width = gCtx.measureText(line.txt).width
+        console.log(`line pos: ${line.pos.x} ${line.pos.y}`)
         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
     })
@@ -58,8 +59,43 @@ function setLineTxt(newtxt) {
 }
 
 function setImg(id) {
+    resetMeme()
     gMeme.selectedImgId = id
     renderMeme()
+}
+
+function resetMeme(){
+    gMeme = {
+        selectedLineIdx: 0,
+        font: 'Impact',
+        lines: [{
+            id: 1,
+            txt: 'Enter your text here',
+            size: 40,
+            align: 'left',
+            color: 'black',
+            isDrag: false,
+            pos: {
+                x: 150,
+                y: 100
+            }
+        },
+        {
+            id: 2,
+            txt: 'Enter your text here',
+            size: 40,
+            align: 'left',
+            color: 'black',
+            isDrag: false,
+            pos: {
+                x: 150,
+                y: 550
+            },
+            width: 0
+        }
+    
+        ]
+    }
 }
 
 function setColor(color) {

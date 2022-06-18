@@ -6,6 +6,7 @@ var gStartPos
 function addListeners() {
     addMouseListeners()
     addTouchListeners()
+    addResizeListener()
 }
 
 function addMouseListeners() {
@@ -18,6 +19,13 @@ function addTouchListeners() {
     gCanvas.addEventListener('touchmove', onMove)
     gCanvas.addEventListener('touchstart', onDown)
     gCanvas.addEventListener('touchend', onUp)
+}
+
+function addResizeListener() {
+    window.addEventListener('resize', function(event) {
+        resizeCanvas()
+        renderMeme()
+    }, true)
 }
 
 function onDown(ev) {
@@ -35,10 +43,12 @@ function isLineClicked(clickedPos) {
         const textHeight = line.size
         const pos = line.pos
         const textWidth = line.width
-        const padding = 10
-        if (clickedPos.x < textWidth + pos.x + padding
-            && clickedPos.x > pos.x - padding
-            && clickedPos.y < textHeight + pos.y + padding
+        const padding = textHeight / 2 + 10
+        console.log(`clickedPos: ${clickedPos.x} ${clickedPos.y}`)
+        console.log(`pos: ${pos.x} ${pos.y}`)
+        if (clickedPos.x < textWidth + pos.x
+            && clickedPos.x > pos.x
+            && clickedPos.y < textHeight + pos.y - padding
             && clickedPos.y > pos.y - padding) {
             return true
         }
@@ -49,7 +59,7 @@ function isLineClicked(clickedPos) {
 }
 
 function onMove(ev) {
-    const meme = getMeme();
+    const meme = getMeme()
     if (meme.lines[gMeme.selectedLineIdx].isDrag) {
         const pos = getEvPos(ev)
         //Calc the delta , the diff we moved
@@ -69,9 +79,9 @@ function onUp() {
 }
 
 function resizeCanvas() {
-    const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+    const elContainer = document.querySelector('.canvas-editor')
+    gCanvas.width = elContainer.offsetWidth
+    gCanvas.height = elContainer.offsetHeight
 }
 
 function getEvPos(ev) {

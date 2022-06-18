@@ -33,7 +33,7 @@
         gap: 0px 0px;
         grid-template-areas:
             "text-input text-input text-input text-input"
-            "switch-lines-btn color-selector ."
+            ". color-selector ."
             "increase-btn decrease-btn ."
             "delete-line-btn add-line-btn ."
             "save-btn facebook-btn download-btn";
