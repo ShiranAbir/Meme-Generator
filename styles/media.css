@@ -1,7 +1,7 @@
 /* Mobile */
 @media (max-width: 1010px) {
 
-    .saved-img{
+    .saved-img {
         width: 100%;
     }
 
@@ -11,6 +11,7 @@
         min-height: 100vh;
         margin: 0;
     }
+
     .editor {
         display: grid;
         grid-template-columns: 1fr;
@@ -26,26 +27,62 @@
     }
 
     .edit {
-        display: grid; 
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "text-input text-input text-input text-input"
-          "switch-lines-btn color-selector ."
-          "increase-btn decrease-btn ."
-          "delete-line-btn add-line-btn ."
-          "save-btn facebook-btn download-btn";
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "text-input text-input text-input text-input"
+            "switch-lines-btn color-selector ."
+            "increase-btn decrease-btn ."
+            "delete-line-btn add-line-btn ."
+            "save-btn facebook-btn download-btn";
     }
 
-    .color-selector{
-        width:80%;
+    .color-selector {
+        width: 80%;
     }
 
     .main-nav {
         width: 100%;
-        margin: 0;
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "logo gallery-btn about-btn my-meme-btn filter-btn";
     }
+
+
+    .logo {
+        grid-area:logo;
+        font-family: Fascinate-Regular;
+        color: #ffffff;
+        margin-left: 10px;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+
+    .gallery-btn{
+        grid-area: gallery-btn;
+    }
+
+    .about-btn{
+        grid-area: about-btn;
+    }
+
+    .my-meme-btn{
+        grid-area: my-meme-btn;
+        text-align: center;
+    }
+
+    .filter-btn{
+        display: block;
+        grid-area: filter-btn;
+        text-align: center;
+    }
+
 
     footer {
         background-color: #ff7f00;
@@ -57,9 +94,9 @@
         margin: auto;
     }
 
-    footer h1{
+    footer h1 {
         margin-top: 0;
-        text-align:inherit;
+        text-align: inherit;
     }
 
     footer p {
@@ -78,14 +115,14 @@
         align-items: center;
     }
 
-    .about-p{
+    .about-p {
         text-align: left;
         margin: auto;
         padding-left: 0;
         padding-right: 0;
         padding-bottom: 150px;
         padding-top: 0;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
 
@@ -99,13 +136,15 @@
         width: 100%;
         display: none;
     }
-    
-    .download-btn{
+
+    .download-btn {
         grid-area: download-btn;
         color: black;
         height: 50%;
         text-align: center;
         line-height: 60px;
     }
+
+
 
 }

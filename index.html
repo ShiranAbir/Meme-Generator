@@ -24,16 +24,23 @@
             <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
             <button class="main-btn about-btn">About</button>
             <button onclick="onShowMyMeme()" class="main-btn my-meme-btn">My Meme</button>
+            <select onchange="onSetFilter(value)" class="main-btn filter-btn">
+                <option value="all">All</option>
+                <option value="funny">Funny</option>
+                <option value="cute">Cute</option>
+                <option value="cool">Cool</option>
+                <option value="cartoon">Cartoon</option>
+            </select>
         </nav>
     </header>
     <section class="desktop-home">
         <section class="search-section">
             <input class="text-search" type="text" placeholder="Enter search keyword">
             <article onclick="onSetFilter('funny')" class="filter filter-funny">Funny</article>
-            <article onclick="onSetFilter('cute')" class="filter filter-comics">Cute</article>
-            <article onclick="onSetFilter('cool')" class="filter filter-dogs">Cool</article>
-            <article onclick="onSetFilter('cartoon')" class="filter filter-drinks">Cartoon</article>
-            <article onclick="onSetFilter('all')" class="filter filter-drinks">All</article>
+            <article onclick="onSetFilter('cute')" class="filter filter-cute">Cute</article>
+            <article onclick="onSetFilter('cool')" class="filter filter-cool">Cool</article>
+            <article onclick="onSetFilter('cartoon')" class="filter filter-cartoon">Cartoon</article>
+            <article onclick="onSetFilter('all')" class="filter filter-all">All</article>
         </section>
         <section class="gallery">
         </section>

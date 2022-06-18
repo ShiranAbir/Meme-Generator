@@ -1,6 +1,8 @@
 'use strict'
 
 var gFilterdImgs = []
+var gKeywordSearchCountMap = { funny: 1, cute: 1, cartoon: 1, cool: 1 }
+
 
 var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: 'cute' },
 { id: 2, url: 'img/2.jpg', keywords: 'cute' },
@@ -37,6 +39,20 @@ function setFilter(filter) {
         gFilterdImgs = []
     } else {
         gFilterdImgs = gImgs.filter(img => img.keywords === filter)
+        keywordSize(filter)
     }
     renderGallery()
+}
+
+function keywordSize(filter) {
+    if (gKeywordSearchCountMap[filter] > 2) return
+    gKeywordSearchCountMap[filter] += 1
+    const elFilters = [ {name:'funny',value:document.querySelector('.filter-funny')},
+                        {name:'cute',value:document.querySelector('.filter-cute')},
+                        {name:'cool',value:document.querySelector('.filter-cool')},
+                        {name:'cartoon',value:document.querySelector('.filter-cartoon')}]
+
+    var elFilter = elFilters.find(elFilter=>elFilter.name === filter).value
+    elFilter.style.fontSize = gKeywordSearchCountMap[filter] + 'rem'
+    console.log(gKeywordSearchCountMap);
 }

@@ -22,6 +22,7 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
+    console.log(pos);
     if (!isLineClicked(pos)) return
     setElementDrag(true)
     gStartPos = pos

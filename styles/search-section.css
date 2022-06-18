@@ -5,7 +5,7 @@
     column-gap: 20px;
     text-align: center;
     margin: auto;
-    height: 3rem;
+    height: 5rem;
     padding: 40px 0;
     max-width: 988px;
 }
@@ -15,10 +15,31 @@
     font-family: Montserrat-regular;
     text-align: center;
     padding-top: 20px;
-    
+
 }
 
 .text-search {
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0);
+    padding-bottom: 20px;
+}
+
+.filter-btn {
+    display: none;
+}
+
+.filter-funny {
+    font-size: 1rem;
+}
+
+.filter-cute {
+    font-size: 1rem;
+}
+
+.filter-cool {
+    font-size: 1rem;
+}
+
+.filter-cartoon {
+    font-size: 1rem;
 }
