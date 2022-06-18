@@ -29,10 +29,11 @@
     <section class="desktop-home">
         <section class="search-section">
             <input class="text-search" type="text" placeholder="Enter search keyword">
-            <article name="funny" class="filter filter-funny">Funny</article>
-            <article name="comics" class="filter filter-comics">Cute</article>
-            <article name="dogs" class="filter filter-dogs">Cool</article>
-            <article name="drinks" class="filter filter-drinks">Cartoon</article>
+            <article onclick="onSetFilter('funny')" class="filter filter-funny">Funny</article>
+            <article onclick="onSetFilter('cute')" class="filter filter-comics">Cute</article>
+            <article onclick="onSetFilter('cool')" class="filter filter-dogs">Cool</article>
+            <article onclick="onSetFilter('cartoon')" class="filter filter-drinks">Cartoon</article>
+            <article onclick="onSetFilter('all')" class="filter filter-drinks">All</article>
         </section>
         <section class="gallery">
         </section>

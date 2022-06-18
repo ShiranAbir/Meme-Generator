@@ -1,12 +1,13 @@
 .search-section {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 0.9fr);
     grid-template-rows: 1fr;
     column-gap: 20px;
     text-align: center;
     margin: auto;
     height: 3rem;
     padding: 40px 0;
+    max-width: 988px;
 }
 
 .filter {
