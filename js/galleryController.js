@@ -22,3 +22,7 @@ function onShowGallery() {
 function onSetFilter(filter) {
     setFilter(filter)
 }
+
+function onSetTheme(theme){
+    setTheme(theme)
+}

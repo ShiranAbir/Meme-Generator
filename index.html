@@ -20,7 +20,11 @@
 <body onload="onInit()">
     <header>
         <nav class="main-nav">
-            <h1 onclick="onShowGallery()" class="logo">Mememe🐑</h1>
+            <h1 onclick="showGallery()" class="logo">Mememe<span><select onchange="onSetTheme(value)" class="main-btn" >
+                <option class="theme-btn" value="sheep">🐑</option>
+                <option class="theme-btn" value="cow">🐄</option>
+                <option class="theme-btn" value="donkey">🐴</option>
+            </select></span></h1>
             <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
             <button class="main-btn about-btn">About</button>
             <button onclick="onShowMyMeme()" class="main-btn my-meme-btn">My Meme</button>
