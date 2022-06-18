@@ -68,6 +68,7 @@ function setColor(color) {
 }
 
 function changeFontSize(sign) {
+    if (gMeme.lines.length === 0) return
     if (sign === '+') {
         gMeme.lines[gMeme.selectedLineIdx].size += 1
     } else {
@@ -217,5 +218,37 @@ function addLine() {
     }
     gMeme.lines.push(newLine)
     renderMeme()
+}
+
+function share() {
+    const btn = document.querySelector('.share-btn');
+    btn.addEventListener('click', async () => {
+        const dataUrl = gCanvas.toDataURL();
+        const blob = await (await fetch(dataUrl)).blob();
+        const filesArray = [
+            new File(
+                [blob],
+                'meme.jpg',
+                {
+                    type: "image/jpeg",
+                    lastModified: new Date().getTime()
+                }
+            )
+        ]
+        if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+            try {
+                var shareData = {
+                    title: 'MDN',
+                    text: 'Learn web development on MDN!',
+                    files: filesArray
+                }
+                await navigator.share(shareData)
+            } catch (err) {
+                alert('Shared failed')
+            }
+        } else {
+            alert('Shared failed')
+        }
+    })
 }
 

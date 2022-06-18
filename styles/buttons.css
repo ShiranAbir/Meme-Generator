@@ -104,3 +104,8 @@
     grid-area: add-line-btn;
     height: 50%;
 }
+
+.share-btn{
+    grid-area: share-btn;
+    height: 50%;
+}

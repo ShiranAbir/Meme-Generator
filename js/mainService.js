@@ -7,11 +7,16 @@ var gCanvasData = {
     height: 600
 }
 
-function init(){
+function init() {
     gCanvas = document.querySelector('.canvas-editor')
     gCtx = gCanvas.getContext('2d')
+    share()
     renderGallery()
     showGallery()
     addListeners()
     savedMemes = loadFromStorage('myMemes')
 }
+
+
+
+

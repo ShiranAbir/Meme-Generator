@@ -32,15 +32,14 @@ function onDown(ev) {
 
 function isLineClicked(clickedPos) {
     const pos = gMeme.lines[gMeme.selectedLineIdx].pos
-    console.log(clickedPos);
-    console.log(gMeme.lines[gMeme.selectedLineIdx].width)
+
     if (clickedPos.x < gMeme.lines[gMeme.selectedLineIdx].width + pos.x
         && clickedPos.y < 50 + pos.y){
         // gMeme.lines[gMeme.selectedLineIdx].isDrag = true
         return true
     }
     
-    console.log(gMeme.lines[gMeme.selectedLineIdx].pos);
+ 
 
     // return true
 }
