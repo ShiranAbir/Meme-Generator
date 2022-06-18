@@ -83,7 +83,6 @@ function switchLine() {
     } else {
         gMeme.selectedLineIdx += 1
     }
-    console.log(gMeme.selectedLineIdx)
 }
 
 function showEditor() {
@@ -252,3 +251,21 @@ function share() {
     })
 }
 
+function drawSticker(num) {
+    var emoji = String.fromCodePoint(num)
+    var newLine = {
+        id: gMeme.lines.length + 1,
+        txt: emoji,
+        size: 40,
+        align: 'left',
+        color: 'black',
+        isDrag: false,
+        pos: {
+            x: 150,
+            y: 300
+        },
+        width: 0
+    }
+    gMeme.lines.push(newLine)
+    renderMeme()
+}

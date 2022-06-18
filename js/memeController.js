@@ -64,3 +64,7 @@ function onDeleteLine(){
     deleteLine()
 }
 
+function onDrawSticker(num){
+    drawSticker(num)
+}
+

@@ -28,7 +28,7 @@
     .edit {
         display: grid; 
         grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
         gap: 0px 0px; 
         grid-template-areas: 
           "text-input text-input text-input text-input"
@@ -99,12 +99,13 @@
         width: 100%;
         display: none;
     }
+    
     .download-btn{
         grid-area: download-btn;
         color: black;
         height: 50%;
         text-align: center;
-        line-height: 50px;
+        line-height: 60px;
     }
 
 }

@@ -80,7 +80,7 @@
     color: black;
     height: 50%;
     text-align: center;
-    line-height: 86px;
+    line-height: 70px;
 }
 
 .save-btn{
@@ -108,4 +108,13 @@
 .share-btn{
     grid-area: share-btn;
     height: 50%;
+}
+
+.stickers-select{
+    grid-area: stickers-select;
+}
+
+.sticker{
+    display: inline;
+    font-size: 50px;
 }
