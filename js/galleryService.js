@@ -29,14 +29,14 @@ const gCowImgs = [{ id: 16, url: 'img/16.jpg', keywords: 'cute' },
 { id: 24, url: 'img/24.jpg', keywords: 'funny' }]
 
 const gDonkeyImgs =[{ id: 25, url: 'img/25.jpg', keywords: 'cute' },
-{ id: 26, url: 'img/26.jpg', keywords: 'cute' },
-{ id: 27, url: 'img/27.jpg', keywords: 'cute' },
-{ id: 28, url: 'img/28.jpg', keywords: 'cute' },
-{ id: 29, url: 'img/29.jpg', keywords: 'cute' },
+{ id: 26, url: 'img/26.jpg', keywords: 'funny' },
+{ id: 27, url: 'img/27.jpg', keywords: 'funny' },
+{ id: 28, url: 'img/28.jpg', keywords: 'funny' },
+{ id: 29, url: 'img/29.jpg', keywords: 'cartoon' },
 { id: 30, url: 'img/30.jpg', keywords: 'cute' },
-{ id: 31, url: 'img/31.jpg', keywords: 'cute' },
-{ id: 32, url: 'img/32.jpg', keywords: 'cute' },
-{ id: 33, url: 'img/33.jpg', keywords: 'cute' },]
+{ id: 31, url: 'img/31.jpg', keywords: 'funny' },
+{ id: 32, url: 'img/32.jpg', keywords: 'cartoon' },
+{ id: 33, url: 'img/33.jpg', keywords: 'funny' },]
 
 var gImgs = gSheepImgs
 
@@ -90,5 +90,5 @@ function setTheme(theme) {
         default:
             gImgs = gSheepImgs
     }
-    renderGallery()
+    setFilter('all')
 }
