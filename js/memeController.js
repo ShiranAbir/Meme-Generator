@@ -34,10 +34,6 @@ function onChangeFontSize(sign) {
     changeFontSize(sign)
 }
 
-// function onSwitchLine() {
-//     switchLine()
-// }
-
 function onShowMyMeme() {
     showMyMeme()
 }

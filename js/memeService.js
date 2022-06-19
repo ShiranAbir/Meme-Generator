@@ -98,15 +98,6 @@ function changeFontSize(sign) {
     renderMeme()
 }
 
-// function switchLine() {
-//     console.log('switching');
-//     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
-//         gMeme.selectedLineIdx = 0
-//     } else {
-//         gMeme.selectedLineIdx += 1
-//     }
-// }
-
 function showMyMeme() {
     var elMyMemeSec = document.querySelector('.my-meme')
     var elEditor = document.querySelector('.editor')

@@ -96,6 +96,8 @@ function _getEvPos(ev) {
     if (gTouchEvs.includes(ev.type)) {
         //soo we will not trigger the mouse ev
         ev.preventDefault()
+        //fix for input not losing focus
+        document.querySelector('.text-input').blur()
         //Gets the first touch point
         ev = ev.changedTouches[0]
         //Calc the right pos according to the touch screen
