@@ -27,3 +27,7 @@ function onDrawSticker(num){
 function onSetPlaceholder(value){
     setPlaceholder(value)
 }
+
+function onInputFocus(input){
+    inputFocus(input)
+}

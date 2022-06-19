@@ -114,9 +114,15 @@ function drawSticker(num) {
 function setPlaceholder(){
     const elTxtInput = document.querySelector('.text-input')
     const value = elTxtInput.value
-    if (value !== 'Enter text here:'){
+    if (value !== 'Enter your text here'){
         elTxtInput.value = gMeme.lines[gMeme.selectedLineIdx].txt
     }else{
-        elTxtInput.value = 'Enter text here:'
+        elTxtInput.value = 'Enter your text here'
+    }
+}
+
+function inputFocus(input){
+    if (input.value === 'Enter your text here'){
+        input.value = ''
     }
 }
