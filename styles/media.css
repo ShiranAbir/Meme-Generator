@@ -15,7 +15,7 @@
     .editor {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 20rem 1fr;
         max-width: 740px;
     }
 
@@ -45,6 +45,7 @@
     }
 
     .main-nav {
+        margin: 0;
         width: 100%;
         display: grid;
         grid-auto-columns: 1fr;

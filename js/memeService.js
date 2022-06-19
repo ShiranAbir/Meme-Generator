@@ -129,6 +129,7 @@ function showEditor() {
     elEditor.style.display = 'grid'
     elMainNav.style.display = 'none'
     elAbout.style.display = 'none'
+    topFunction()
 }
 
 function ShareMeme() {
