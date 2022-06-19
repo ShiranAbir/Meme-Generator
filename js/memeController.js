@@ -2,7 +2,17 @@
 
 function renderMeme() {
     var meme = getMeme()
-    var imgToRender = gImgs.find(img => img.id === +meme.selectedImgId)
+    var imgToRender
+
+    // Check if this is a saved meme
+    if (!meme.imgContent) {
+        imgToRender = gImgs.find(img => img.id === +meme.selectedImgId)
+    } else {
+        var gAll = [gSheepImgs, gCowImgs, gDonkeyImgs]
+        gAll = gAll.flat()
+        imgToRender = gAll.find(img => img.id === +meme.selectedImgId)
+    }
+
     var img = new Image()
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
