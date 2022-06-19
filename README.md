@@ -1,5 +1,6 @@
 My Meme Generator for both desktop and mobile.
 Includes a lot of features.
+
 Basic Features:
 * Add and remove lines of text.
 * Change text font size and family.
