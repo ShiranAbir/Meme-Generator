@@ -6,6 +6,7 @@
     cursor: pointer;
     font-family: Montserrat-regular;
     font-size: 1rem;
+    text-align: end;
 }
 
 .gallery-btn{
@@ -113,4 +114,8 @@
     display: inline;
     font-size: 50px;
     text-align: center;
+}
+
+.filter{
+    text-align: end;
 }

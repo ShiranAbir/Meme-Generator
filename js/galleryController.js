@@ -26,3 +26,7 @@ function onSetFilter(filter) {
 function onSetTheme(theme){
     setTheme(theme)
 }
+
+function onTypingFilter(typing){
+    typingFilter(typing)
+}

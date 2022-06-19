@@ -1,21 +1,26 @@
 
 body{
-    height: 100vw;
-    position: relative;
+    height: 100VW;
     margin: 0;
 }
 
 header{
     position: relative;
-    max-width: 988px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .main-nav{
-    background-color: #ff7f00;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 1fr;   
+    max-width: 920px;
+    position: relative;
+    margin: auto;
+}
+
+.main-nav-container{
+    background-color: #ff7f00;
     width: 100%;
 }
 
@@ -26,21 +31,18 @@ header{
     grid-row-end: 1;
     font-family: Fascinate-Regular;
     color: #ffffff;
-    margin-left: 25px;
+    margin-left: 0;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .my-meme-btn{
-    grid-column-start: 5;
+    grid-column-start: 8;
     grid-column-end: 9;
     grid-row-start: 1;
     grid-row-end: 1;
-    text-align: end;
 }
 
 .theme-btn{
     font-size: 4rem;
 }
-
-

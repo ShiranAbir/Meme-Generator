@@ -24,32 +24,12 @@ function onChangeFontSize(sign) {
     changeFontSize(sign)
 }
 
-function onSwitchLine() {
-    switchLine()
-}
-
-function onShare() {
-    ShareMeme()
-}
+// function onSwitchLine() {
+//     switchLine()
+// }
 
 function onShowMyMeme() {
     showMyMeme()
-}
-
-function onSave() {
-    var memes = loadFromStorage("memes")
-    if (!memes) { 
-        memes = []
-    }
-    gMeme.imgContent = gCanvas.toDataURL('image/jpeg')
-
-    memes.push(gMeme)
-    saveToStorage("memes", memes)
-    alert('Meme saved!')
-}
-
-function onDownload(link){
-    downloadImg(link)
 }
 
 function onChangeFont(font) {
@@ -64,7 +44,5 @@ function onDeleteLine(){
     deleteLine()
 }
 
-function onDrawSticker(num){
-    drawSticker(num)
-}
+
 

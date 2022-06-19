@@ -1,12 +1,10 @@
 footer {
     background-color: #ff7f00;
-    text-align: center;
-    display: block;
-    max-width: 988px;
-    position: relative;
+    position: fixed;
     bottom: 0;
-    margin: 0 auto;
-     
+    width: 100%;
+    text-align: center;
+
 }
 
 footer h1 {
@@ -14,12 +12,13 @@ footer h1 {
     color: #ffffff;
     margin: 0;
 }
+
 footer p {
     color: #ffffff;
-    font-family: Montserrat-thin;
+    font-family: Montserrat-Regular;
 }
 
-.about-p{
+.about-p {
     max-width: 400px;
     text-align: left;
     margin: auto;
@@ -27,13 +26,13 @@ footer p {
     padding-right: 150px;
     padding-bottom: 150px;
     padding-top: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.about-h1{
+.about-h1 {
     padding-top: 30px;
     max-width: 400px;
     text-align: left;
     margin: auto;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

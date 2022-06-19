@@ -28,7 +28,7 @@ const gCowImgs = [{ id: 16, url: 'img/16.jpg', keywords: 'cute' },
 { id: 23, url: 'img/23.jpg', keywords: 'funny' },
 { id: 24, url: 'img/24.jpg', keywords: 'funny' }]
 
-const gDonkeyImgs =[{ id: 25, url: 'img/25.jpg', keywords: 'cute' },
+const gDonkeyImgs = [{ id: 25, url: 'img/25.jpg', keywords: 'cute' },
 { id: 26, url: 'img/26.jpg', keywords: 'funny' },
 { id: 27, url: 'img/27.jpg', keywords: 'funny' },
 { id: 28, url: 'img/28.jpg', keywords: 'funny' },
@@ -52,10 +52,10 @@ function showGallery() {
     elMainNav.style.display = 'grid'
     elMyMemeSec.style.display = 'none'
     elAbout.style.display = 'block'
-    clearCanvas()
+    _clearCanvas()
 }
 
-function clearCanvas(){
+function _clearCanvas() {
     gCanvas = document.querySelector('.canvas-editor')
     gCtx = gCanvas.getContext('2d')
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
@@ -66,12 +66,12 @@ function setFilter(filter) {
         gFilterdImgs = []
     } else {
         gFilterdImgs = gImgs.filter(img => img.keywords === filter)
-        keywordSize(filter)
+        _keywordSize(filter)
     }
     renderGallery()
 }
 
-function keywordSize(filter) {
+function _keywordSize(filter) {
     if (gKeywordSearchCountMap[filter] > 2) return
     gKeywordSearchCountMap[filter] += 1
     const elFilters = [{ name: 'funny', value: document.querySelector('.filter-funny') },
@@ -103,4 +103,13 @@ function setTheme(theme) {
 function topFunction() {
     document.body.scrollTop = 0 // For Safari
     document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
-  }
+}
+
+function typingFilter(typing) {
+    if (typing === '') {
+        gFilterdImgs = []
+    } else {
+        gFilterdImgs = gImgs.filter(img => img.keywords.startsWith(typing))
+    }
+    renderGallery()
+}

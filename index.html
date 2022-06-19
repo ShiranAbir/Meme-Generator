@@ -13,77 +13,91 @@
     <script src="js/galleryController.js"></script>
     <script src="js/mainService.js"></script>
     <script src="js/galleryService.js"></script>
-    <script src="js/dragDrop.js"></script>
+    <script src="js/dragDropService.js"></script>
+    <script src="js/editorController.js"></script>
+    <script src="js/editorService.js"></script>
+    <script src="js/storageService.js"></script>
     <script src="js/fontAwesome.js"></script>
 </head>
 
 <body onload="onInit()">
     <header>
-        <nav class="main-nav">
-            <h1 onclick="showGallery()" class="logo">Mememe<span><select onchange="onSetTheme(value)" class="main-btn" >
-                <option class="theme-btn" value="sheep">🐑</option>
-                <option class="theme-btn" value="cow">🐄</option>
-                <option class="theme-btn" value="donkey">🐴</option>
-            </select></span></h1>
-            <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
-            <button class="main-btn about-btn">About</button>
-            <button onclick="onShowMyMeme()" class="main-btn my-meme-btn">My Meme</button>
-            <select onchange="onSetFilter(value)" class="main-btn filter-btn">
-                <option value="all">All</option>
-                <option value="funny">Funny</option>
-                <option value="cute">Cute</option>
-                <option value="cool">Cool</option>
-                <option value="cartoon">Cartoon</option>
-            </select>
+        <section class="main-nav-container">
+            <nav class="main-nav">
+                <h1 onclick="showGallery()" class="logo">Mememe<span><select onchange="onSetTheme(value)"
+                            class="main-btn">
+                            <option class="theme-btn" value="sheep">🐑</option>
+                            <option class="theme-btn" value="cow">🐄</option>
+                            <option class="theme-btn" value="donkey">🐴</option>
+                        </select></span></h1>
+                <button onclick="onShowGallery()" class="main-btn gallery-btn">Gallery</button>
+                <button class="main-btn about-btn">About</button>
+                <button onclick="onShowMyMeme()" class="main-btn my-meme-btn">My Meme</button>
+        <select onchange="onSetFilter(value)" class="main-btn filter-btn">
+            <option value="all">All</option>
+            <option value="funny">Funny</option>
+            <option value="cute">Cute</option>
+            <option value="cool">Cool</option>
+            <option value="cartoon">Cartoon</option>
+        </select>
         </nav>
+        </section>
     </header>
     <section class="desktop-home">
         <section class="search-section">
-            <input class="text-search" type="text" placeholder="Enter search keyword">
+            <input onkeyup="onTypingFilter(this.value)" class="text-search" type="text" placeholder="Enter search keyword">
             <article onclick="onSetFilter('funny')" class="filter filter-funny">Funny</article>
             <article onclick="onSetFilter('cute')" class="filter filter-cute">Cute</article>
             <article onclick="onSetFilter('cool')" class="filter filter-cool">Cool</article>
             <article onclick="onSetFilter('cartoon')" class="filter filter-cartoon">Cartoon</article>
             <article onclick="onSetFilter('all')" class="filter filter-all">All</article>
         </section>
-        <section class="gallery">
-        </section>
+        <div class="gallery-container">
+            <section class="gallery"></section>
+        </div>
     </section>
     <section class="editor">
         <canvas class="canvas-editor" height="600" width="600"></canvas>
         <section class="edit">
-                <button class="edit-btn increase-btn" value="+" onclick="onChangeFontSize(this.value)"><i class="fa-solid fa-plus"></i></button>
-                <button class="edit-btn decrease-btn" value="-" onclick="onChangeFontSize(this.value)"><i class="fa-solid fa-minus"></i></button>
-                <input onchange="onSetColor(value)" type="color" class="edit-btn color-selector" value="#77baca" />
-                <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="edit-btn text-input" type="text"
-                    value="Enter text here:">
-                <button onclick="onShare()" class="edit-btn facebook-btn"><i class="fa-brands fa-facebook-square"></i></button> 
-                <button onclick="onSave()" class="edit-btn save-btn"><i class="fa-solid fa-floppy-disk"></i></button>   
-                <a href="#" class="edit-btn download-btn" onclick="onDownload(this)" download="my-img.jpg"><i class="fa-solid fa-download"></i></a>
-                <select onchange="onChangeFont(this.value)" class="edit-btn font-btn">
-                    <option value="impact">Impact</option>
-                    <option value="ariel">Ariel</option>
-                    <option value="sans-serif">Sans-Serif</option>
-                </select>
-                <button class="edit-btn share-btn"><i class="fa-solid fa-share-nodes"></i></button>
-                <button class="edit-btn add-line-btn" onclick="onAddLine()"><i class="fa-solid fa-circle-plus"></i></button>
-                <button class="edit-btn delete-line-btn" onclick="onDeleteLine()"><i class="fa-solid fa-trash-can"></i></button>
-                <div class="edit-btn stickers-select">
-                    <div onclick="onDrawSticker(9996)" class="sticker">&#9996</div>
-                    <div onclick="onDrawSticker(128513)" class="sticker">&#128513</div>
-                    <div onclick="onDrawSticker(128514)" class="sticker">&#128514</div>
-                    <div onclick="onDrawSticker(128515)" class="sticker">&#128515</div>
-                    <div onclick="onDrawSticker(128516)" class="sticker">&#128516</div>
-                    <div onclick="onDrawSticker(128517)" class="sticker">&#128517</div>
-                  </div>
+            <button class="edit-btn increase-btn" value="+" onclick="onChangeFontSize(this.value)"><i
+                    class="fa-solid fa-plus"></i></button>
+            <button class="edit-btn decrease-btn" value="-" onclick="onChangeFontSize(this.value)"><i
+                    class="fa-solid fa-minus"></i></button>
+            <input onchange="onSetColor(value)" type="color" class="edit-btn color-selector" value="#77baca" />
+            <input onfocus="this.value=''" oninput="setLineTxt(this.value)" class="edit-btn text-input" type="text"
+                value="Enter text here:">
+            <button onclick="onShare()" class="edit-btn facebook-btn"><i
+                    class="fa-brands fa-facebook-square"></i></button>
+            <button onclick="onSave()" class="edit-btn save-btn"><i class="fa-solid fa-floppy-disk"></i></button>
+            <a href="#" class="edit-btn download-btn" onclick="onDownload(this)" download="my-img.jpg"><i
+                    class="fa-solid fa-download"></i></a>
+            <select onchange="onChangeFont(this.value)" class="edit-btn font-btn">
+                <option value="impact">Impact</option>
+                <option value="ariel">Ariel</option>
+                <option value="sans-serif">Sans-Serif</option>
+            </select>
+            <button class="edit-btn share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="edit-btn add-line-btn" onclick="onAddLine()"><i class="fa-solid fa-circle-plus"></i></button>
+            <button class="edit-btn delete-line-btn" onclick="onDeleteLine()"><i
+                    class="fa-solid fa-trash-can"></i></button>
+            <div class="edit-btn stickers-select">
+                <div onclick="onDrawSticker(9996)" class="sticker">&#9996</div>
+                <div onclick="onDrawSticker(128513)" class="sticker">&#128513</div>
+                <div onclick="onDrawSticker(128514)" class="sticker">&#128514</div>
+                <div onclick="onDrawSticker(128515)" class="sticker">&#128515</div>
+                <div onclick="onDrawSticker(128516)" class="sticker">&#128516</div>
+                <div onclick="onDrawSticker(128517)" class="sticker">&#128517</div>
+            </div>
         </section>
     </section>
     <section class="my-meme">
         <div class="saved-meme"></div>
     </section>
     <section class="about">
-        <h1 class="about-h1" >lorem ipsum</h1>
-        <p class="about-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt nihil provident. Dolorem mollitia odio, dolorum officia consequuntur nam hic fugit animi voluptas voluptatibus voluptatum et accusamus eius, saepe facilis?</p>
+        <h1 class="about-h1">lorem ipsum</h1>
+        <p class="about-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sunt nihil provident. Dolorem
+            mollitia odio, dolorum officia consequuntur nam hic fugit animi voluptas voluptatibus voluptatum et
+            accusamus eius, saepe facilis?</p>
     </section>
     <footer>
         <div>
