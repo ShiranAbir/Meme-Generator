@@ -119,3 +119,7 @@
 .filter{
     text-align: end;
 }
+
+.footer-btn{
+    cursor: pointer;
+}
